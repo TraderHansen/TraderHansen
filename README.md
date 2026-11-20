@@ -1,6 +1,6 @@
 <div align="center">
 
-### littlehush-art
+### TraderHansen
 
 把开源项目拆开看清楚，再把它们拼成每天真在用的东西。
 
@@ -8,7 +8,7 @@
 
 <br>
 
-![refresh-card](https://github.com/littlehush-art/littlehush-art/actions/workflows/card.yml/badge.svg)
+![refresh-card](https://github.com/TraderHansen/TraderHansen/actions/workflows/card.yml/badge.svg)
 
 </div>
 
@@ -27,9 +27,9 @@
 
 | 仓库 | 说明 |
 |---|---|
-| [awesome-open-source-trading](https://github.com/littlehush-art/awesome-open-source-trading) | 450+ 开源交易/回测/Kalshi·Polymarket/期权/AI agent 项目 + 110 篇带收益数据的量化论文索引 |
-| [claude-code-rust](https://github.com/littlehush-art/claude-code-rust) | Claude Code 的 Rust 重写版：启动快 2.5x，二进制小 97% |
-| [Quant-Developers-Resources](https://github.com/littlehush-art/Quant-Developers-Resources) | 量化开发 / 研究 / 交易岗的技能与面试资源 |
+| [awesome-open-source-trading](https://github.com/TraderHansen/awesome-open-source-trading) | 450+ 开源交易/回测/Kalshi·Polymarket/期权/AI agent 项目 + 110 篇带收益数据的量化论文索引 |
+| [claude-code-rust](https://github.com/TraderHansen/claude-code-rust) | Claude Code 的 Rust 重写版：启动快 2.5x，二进制小 97% |
+| [Quant-Developers-Resources](https://github.com/TraderHansen/Quant-Developers-Resources) | 量化开发 / 研究 / 交易岗的技能与面试资源 |
 
 ---
 

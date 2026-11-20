@@ -14,7 +14,7 @@ import urllib.request
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "assets" / "status.svg"
-UA = "Mozilla/5.0 (profile-card; +https://github.com/littlehush-art)"
+UA = "Mozilla/5.0 (profile-card; +https://github.com/TraderHansen)"
 
 
 def get(url: str, timeout: int = 20) -> str:
@@ -56,7 +56,7 @@ def main() -> None:
     instock_txt = "—" if instock < 0 else str(instock)
     outstock_txt = "—" if outstock < 0 else str(outstock)
 
-    svg = f"""<svg width="860" height="270" viewBox="0 0 860 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="littlehush-art 自动巡检卡片">
+    svg = f"""<svg width="860" height="270" viewBox="0 0 860 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TraderHansen 自动巡检卡片">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -72,7 +72,7 @@ def main() -> None:
 
   <circle cx="28" cy="34" r="5" fill="{accent}"/>
   <text x="44" y="39" fill="#e6edf3" font-size="16" font-weight="600"
-        font-family="'PingFang SC','Microsoft YaHei',system-ui,sans-serif">littlehush-art · 自动巡检</text>
+        font-family="'PingFang SC','Microsoft YaHei',system-ui,sans-serif">TraderHansen · 自动巡检</text>
   <text x="832" y="39" fill="#8b949e" font-size="12" text-anchor="end"
         font-family="ui-monospace,SFMono-Regular,Menlo,monospace">{esc(stamp)}</text>
 
@@ -104,7 +104,7 @@ def main() -> None:
   <text x="28" y="240" fill="#6e7681" font-size="11.5"
         font-family="'PingFang SC',system-ui,sans-serif">本卡片由 GitHub Actions 每日生成并提交回仓库，无第三方图床、无外部统计服务</text>
   <text x="832" y="240" fill="#484f58" font-size="11" text-anchor="end"
-        font-family="ui-monospace,SFMono-Regular,Menlo,monospace">github.com/littlehush-art</text>
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace">github.com/TraderHansen</text>
 </svg>
 """
     OUT.parent.mkdir(parents=True, exist_ok=True)
