@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>littlehush-art · 状态看板</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --line:#30363d;
+    --fg:#e6edf3; --muted:#8b949e; --dim:#6e7681;
+    --green:#3fb950; --blue:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; background:radial-gradient(1200px 600px at 50% -10%,#1b2430 0%,var(--bg) 60%);
+    color:var(--fg); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    padding:40px 20px 64px;
+  }
+  main{max-width:920px;margin:0 auto}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  h1{font-size:26px;margin:0;letter-spacing:.5px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:8px;
+       box-shadow:0 0 0 0 rgba(63,185,80,.7); animation:pulse 2.4s infinite}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,185,80,.6)}
+    70%{box-shadow:0 0 0 10px rgba(63,185,80,0)}
+    100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}
+  }
+  .sub{color:var(--muted);font-size:13px;margin:8px 0 26px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px}
+  .card img{width:100%;height:auto;display:block;border-radius:8px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  a.item{
+    display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:.18s;
+  }
+  a.item:hover{border-color:#484f58;transform:translateY(-2px)}
+  .k{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:6px}
+  .d{font-size:12.5px;color:var(--muted);line-height:1.6}
+  footer{margin-top:26px;color:var(--dim);font-size:12px;line-height:1.8;border-top:1px solid var(--line);padding-top:16px}
+  code{background:#21262d;padding:1.5px 6px;border-radius:5px;font-size:12px;color:#c9d1d9}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1><span class="dot"></span>littlehush-art · 状态看板</h1>
+    <span class="sub" style="margin:0">GitHub Pages 托管</span>
+  </header>
+  <p class="sub">这张卡片由 Actions 每天 09:17 重新抓数据、重画、提交回仓库 —— 这个站点只是把它显示出来。</p>
+
+  <div class="card">
+    <img src="assets/status.svg" alt="自动巡检卡片">
+  </div>
+
+  <div class="grid">
+    <a class="item" href="https://github.com/littlehush-art/awesome-open-source-trading">
+      <div class="k">awesome-open-source-trading</div>
+      <div class="d">450+ 开源交易/回测/预测市场项目，110 篇带收益数据的量化论文索引。</div>
+    </a>
+    <a class="item" href="https://github.com/littlehush-art/claude-code-rust">
+      <div class="k">claude-code-rust</div>
+      <div class="d">Claude Code 的 Rust 重写版：启动快 2.5×，二进制小 97%。</div>
+    </a>
+    <a class="item" href="https://github.com/littlehush-art/Quant-Developers-Resources">
+      <div class="k">Quant-Developers-Resources</div>
+      <div class="d">量化开发 / 研究 / 交易岗的技能路径与面试资源。</div>
+    </a>
+    <a class="item" href="https://github.com/littlehush-art/littlehush-art">
+      <div class="k">littlehush-art（本仓库）</div>
+      <div class="d">profile 名片 + 生成卡片的脚本与 workflow，全部可复用。</div>
+    </a>
+  </div>
+
+  <footer>
+    零第三方依赖：没有图床、没有统计服务、没有数据库。<br>
+    数据源 <code>stock.dmitea.com</code> 与 <code>api.github.com</code>；渲染 <code>scripts/gen_card.py</code>；
+    部署 GitHub Pages。
+  </footer>
+</main>
+</body>
+</html>
