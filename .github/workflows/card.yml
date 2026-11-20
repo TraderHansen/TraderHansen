@@ -1,0 +1,41 @@
+name: refresh-card
+
+# UTC 01:17 = 北京 09:17。用非整点分钟避开 Actions 高峰期排队。
+on:
+  schedule:
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/card.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-card
+  cancel-in-progress: false
+
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: 生成 SVG 卡片
+        run: python3 scripts/gen_card.py
+
+      - name: 提交回仓库
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/status.svg
+          if git diff --cached --quiet; then
+            echo "卡片无变化，跳过提交"
+          else
+            git commit -m "chore: refresh status card"
+            git push
+          fi
